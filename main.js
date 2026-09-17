@@ -45,6 +45,16 @@
       correct:3,
       explain:"CHÍNH XÁC! Trung Thu là để cùng nhau vui chơi, rước đèn, ăn bánh và tạo thật nhiều kỷ niệm!" }
   ];
+  // Hàm nạp trước toàn bộ ảnh nền vào Cache
+function preloadBackgrounds() {
+  for (const key in BG) {
+    const img = new Image();
+    img.src = BG[key];
+  }
+}
+
+// Kích hoạt nạp ảnh ngầm ngay khi tải trang
+preloadBackgrounds();
   const LETTERS = ["A","B","C","D"];
   const TOTAL = QUESTIONS.length;
   const CONFETTI_COLORS = ['#f6c453','#e8734a','#f2a9c7','#3ea883','#7a5fd6','#3aa0e0'];
