@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>Phiêu Lưu Cùng Chú Cuội</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="sym-cuoi" viewBox="0 0 200 260">
+    <ellipse cx="100" cy="248" rx="46" ry="8" fill="rgba(0,0,0,0.15)"/>
+    <rect x="76" y="196" width="20" height="42" rx="8" fill="#6b4a2b"/>
+    <rect x="104" y="196" width="20" height="42" rx="8" fill="#6b4a2b"/>
+    <ellipse cx="86" cy="240" rx="14" ry="8" fill="#3f2a17"/>
+    <ellipse cx="114" cy="240" rx="14" ry="8" fill="#3f2a17"/>
+    <path d="M60 120 Q100 100 140 120 L148 202 Q100 220 52 202 Z" fill="#a9713f"/>
+    <path d="M62 140 L138 158" stroke="#7a4a24" stroke-width="10" stroke-linecap="round"/>
+    <path d="M58 128 Q34 150 40 178" stroke="#a9713f" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <path d="M142 128 Q168 145 158 170" stroke="#a9713f" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <circle cx="40" cy="180" r="11" fill="#f6cfa0"/>
+    <circle cx="158" cy="172" r="11" fill="#f6cfa0"/>
+    <line x1="163" y1="137" x2="163" y2="130" stroke="#7a4a24" stroke-width="2"/>
+    <ellipse cx="163" cy="150" rx="10" ry="13" fill="#e8734a"/>
+    <rect x="90" y="105" width="20" height="16" fill="#f6cfa0"/>
+    <circle cx="100" cy="76" r="46" fill="#f6cfa0"/>
+    <circle cx="56" cy="78" r="8" fill="#f6cfa0"/>
+    <circle cx="144" cy="78" r="8" fill="#f6cfa0"/>
+    <path d="M54 66 Q60 24 100 24 Q140 24 146 66 Q140 46 100 46 Q60 46 54 66 Z" fill="#241a12"/>
+    <path d="M52 62 Q100 48 148 62 L148 72 Q100 58 52 72 Z" fill="#7a4a24"/>
+    <path d="M148 66 Q166 70 162 90" stroke="#7a4a24" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M148 70 Q170 80 160 100" stroke="#7a4a24" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="84" cy="80" r="4.5" fill="#241a12"/>
+    <circle cx="116" cy="80" r="4.5" fill="#241a12"/>
+    <path d="M88 96 Q100 104 112 96" stroke="#7a4a24" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="72" cy="90" r="7" fill="#f2a67a" opacity="0.6"/>
+    <circle cx="128" cy="90" r="7" fill="#f2a67a" opacity="0.6"/>
+  </symbol>
+  <symbol id="sym-hang" viewBox="0 0 200 260">
+    <ellipse cx="100" cy="250" rx="52" ry="8" fill="rgba(0,0,0,0.15)"/>
+    <path d="M50 130 Q100 108 150 130 L168 232 Q100 254 32 232 Z" fill="#f3a8c9"/>
+    <path d="M60 140 Q100 126 140 140 L150 210 Q100 224 50 210 Z" fill="#f7c9df"/>
+    <path d="M52 132 Q18 150 22 190 Q30 200 44 186 Q40 160 60 144 Z" fill="#f3a8c9"/>
+    <path d="M148 132 Q182 150 178 190 Q170 200 156 186 Q160 160 140 144 Z" fill="#f3a8c9"/>
+    <circle cx="30" cy="192" r="9" fill="#fbdcc0"/>
+    <circle cx="170" cy="192" r="9" fill="#fbdcc0"/>
+    <rect x="90" y="106" width="20" height="14" fill="#fbdcc0"/>
+    <path d="M58 70 Q52 150 70 214" stroke="#1c140f" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M142 70 Q148 150 130 214" stroke="#1c140f" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <circle cx="100" cy="78" r="44" fill="#fbdcc0"/>
+    <path d="M58 68 Q64 26 100 26 Q136 26 142 68 Q136 44 100 44 Q64 44 58 68 Z" fill="#1c140f"/>
+    <circle cx="132" cy="52" r="7" fill="#f6c453"/>
+    <circle cx="132" cy="52" r="3" fill="#fff6e3"/>
+    <path d="M78 78 Q82 74 86 78" stroke="#1c140f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M114 78 Q118 74 122 78" stroke="#1c140f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M88 96 Q100 102 112 96" stroke="#c9738f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="72" cy="90" r="6" fill="#f5b0a0" opacity="0.6"/>
+    <circle cx="128" cy="90" r="6" fill="#f5b0a0" opacity="0.6"/>
+  </symbol>
+  <symbol id="sym-rabbit" viewBox="0 0 200 200">
+    <ellipse cx="100" cy="188" rx="44" ry="7" fill="rgba(0,0,0,0.15)"/>
+    <path d="M74 90 Q60 20 82 8 Q94 16 88 56 Q86 76 84 92 Z" fill="#fdfaf3"/>
+    <path d="M126 90 Q140 20 118 8 Q106 16 112 56 Q114 76 116 92 Z" fill="#fdfaf3"/>
+    <path d="M78 82 Q70 34 84 20" stroke="#f3b8c9" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M122 82 Q130 34 116 20" stroke="#f3b8c9" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="100" cy="140" rx="52" ry="42" fill="#fdfaf3"/>
+    <circle cx="100" cy="100" r="40" fill="#fdfaf3"/>
+    <ellipse cx="72" cy="168" rx="14" ry="10" fill="#fdfaf3"/>
+    <ellipse cx="128" cy="168" rx="14" ry="10" fill="#fdfaf3"/>
+    <circle cx="100" cy="172" r="12" fill="#d9a45c"/>
+    <path d="M92 172 L108 172 M100 164 L100 180" stroke="#a9713f" stroke-width="2"/>
+    <circle cx="86" cy="98" r="4" fill="#241a12"/>
+    <circle cx="114" cy="98" r="4" fill="#241a12"/>
+    <path d="M96 110 Q100 114 104 110" stroke="#e8734a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M100 108 L100 112" stroke="#e8734a" stroke-width="2.5"/>
+    <circle cx="74" cy="108" r="6" fill="#f3b8c9" opacity="0.7"/>
+    <circle cx="126" cy="108" r="6" fill="#f3b8c9" opacity="0.7"/>
+  </symbol>
+  <symbol id="sym-tree" viewBox="0 0 320 280">
+    <path d="M160 260 Q120 240 80 258" stroke="#6b4a2b" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M160 260 Q200 240 240 258" stroke="#6b4a2b" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M138 260 Q130 180 148 120 Q160 100 172 120 Q188 180 182 260 Z" fill="#8a5a34"/>
+    <ellipse cx="110" cy="90" rx="60" ry="46" fill="#3f8760"/>
+    <ellipse cx="200" cy="88" rx="62" ry="48" fill="#4c9a6e"/>
+    <ellipse cx="160" cy="60" rx="70" ry="52" fill="#5aab7c"/>
+    <line x1="160" y1="108" x2="160" y2="130" stroke="#7a4e2c" stroke-width="2"/>
+    <ellipse cx="160" cy="140" rx="9" ry="12" fill="#f6c453"/>
+  </symbol>
+</defs>
+</svg>
+
+<div class="big-moon"></div>
+<div class="sky" id="sky"></div>
+<div class="bg-layer" id="bg-a"></div>
+<div class="bg-layer" id="bg-b"></div>
+<div class="bg-scrim"></div>
+<div id="fireflies"></div>
+<div id="lanterns"></div>
+<div id="shooting-stars"></div>
+
+<button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" aria-label="Bật/tắt âm thanh">🔊</button>
+
+<!-- 1. WELCOME -->
+<section class="screen active" id="screen-welcome">
+  <div class="floating-cta-wrap">
+    <button class="floating-cta" onclick="startGame()">Bắt đầu ✨</button>
+  </div>
+</section>
+
+<!-- 2. WHEEL -->
+<section class="screen" id="screen-wheel">
+  <div class="progress-float">⭐ <span id="wheel-progress">0/6</span> Ngôi Sao</div>
+  <div class="sheet-wrap">
+    <div class="sheet">
+      <div class="wheel-wrap">
+        <p class="wheel-hint" id="wheel-hint">Mỗi lần quay, em sẽ nhận được một câu hỏi bí mật. Trả lời đúng để thu thập Ngôi Sao Trung Thu nhé!</p>
+        <div class="wheel-glow"></div>
+        <div class="wheel-frame" id="wheel-frame">
+          <div class="sparkle-ring" id="sparkle-ring"></div>
+          <div class="wheel-pointer"></div>
+          <div class="wheel-disc" id="wheel-disc">
+            <div class="wheel-icon" id="wi0"></div>
+            <div class="wheel-icon" id="wi1"></div>
+            <div class="wheel-icon" id="wi2"></div>
+            <div class="wheel-icon" id="wi3"></div>
+            <div class="wheel-icon" id="wi4"></div>
+            <div class="wheel-icon" id="wi5"></div>
+          </div>
+          <div class="wheel-center">🎯</div>
+        </div>
+        <button class="btn" id="spin-btn" onclick="spinWheel()">Quay Ngay 🎡</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. QUESTION -->
+<section class="screen" id="screen-question">
+  <div class="progress-float" id="q-progress">0/6</div>
+  <div class="sheet-wrap">
+    <div class="sheet">
+      <div id="q-banner"></div>
+      <div class="q-text" id="q-text">Câu hỏi ở đây</div>
+      <div class="retry-msg" id="q-retry"></div>
+      <div id="q-options"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FEEDBACK -->
+<section class="screen" id="screen-feedback">
+  <div class="feedback-panel">
+    <div class="fb-mascot" id="fb-mascot"></div>
+    <h2 style="font-size:25px; color:var(--jade-deep);">Chính xác!</h2>
+    <div class="star-gain">+1 Ngôi Sao <span id="fb-progress">(1/6)</span></div>
+    <div class="explain-box" id="fb-explain">Giải thích ở đây</div>
+    <button class="btn secondary" id="fb-continue-btn" onclick="afterFeedback()">Quay tiếp 🎡</button>
+  </div>
+</section>
+
+<!-- 5. COMPLETE -->
+<section class="screen" id="screen-complete">
+  <div class="sheet-wrap">
+    <div class="sheet">
+      <p class="center-note">Em đã trả lời đúng cả 6 câu hỏi Trung Thu!</p>
+      <button class="btn" onclick="showScreen('reward')">Nhận phần thưởng 🎁</button>
+    </div>
+  </div>
+</section>
+
+<!-- 6. REWARD -->
+<section class="screen" id="screen-reward">
+  <div class="sheet-wrap">
+    <div class="sheet">
+      <div class="btn-row">
+        <button class="btn secondary" onclick="resetGame()">Chơi lại</button>
+        <!-- Đổi hàm onClick ở đây -->
+        <button class="btn" onclick="showPreparedImage()">Chụp khoảnh khắc</button>
+      </div>
+      
+      <!-- KHUNG CHỨA ẢNH CÓ SẴN (Mặc định ẩn) -->
+      <img id="my-prepared-image" src="image/ket.png" style="display:none; width:100%; margin-top:16px; border-radius:12px; border:3px solid #f6c453; box-shadow:0 8px 16px rgba(0,0,0,0.2);">
+      <div id="save-note" style="display:none; text-align:center; font-size:13px; margin-top:8px; color:var(--ink-soft); font-weight:bold;">Nhấn giữ ảnh để tải về máy nhé!</div>
+
+      <button class="btn ghost" onclick="showScreen('outro')" style="margin-top:8px;">Tiếp theo →</button>
+    </div>
+  </div>
+</section>
+
+<!-- 7. OUTRO -->
+<section class="screen" id="screen-outro">
+  <div class="floating-cta-wrap">
+    <button class="floating-cta" onclick="resetGame()" style="animation:none;">Chơi lại từ đầu ↺</button>
+  </div>
+</section>
+
+<canvas id="capture-canvas" width="800" height="1000"></canvas>
+<audio id="bg-music" src="audio/ruocDen.mp3" loop></audio>
+<script src="main.js"></script>
+</body>
+</html>
