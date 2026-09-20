@@ -14,12 +14,12 @@
   };
 
   const QUESTIONS = [
-    { bg:"q0", badge:"Thử thách 1", theme:"Ngày Trung Thu", mascot:"sym-cuoi", showBanner:false,
+    { bg:"q0", badge:"", theme:"", mascot:"sym-cuoi", showBanner:false,
       q:"Tết Trung Thu được tổ chức vào ngày nào?",
       options:["Rằm tháng Giêng","Rằm tháng Tư","Rằm tháng Tám","Rằm tháng Mười"],
       correct:2,
       explain:"Chính xác! Trung Thu chính là ngày Rằm tháng Tám âm lịch đó!" },
-    { bg:"q1", badge:"Thử thách 2", theme:"Bạn của cung trăng", mascot:"sym-hang", showBanner:false,
+    { bg:"q1", badge:"", theme:"", mascot:"sym-hang", showBanner:false,
       q:"Hai nhân vật được nhắc đến nhiều trong ngày Tết Trung Thu là ai?",
       options:["Chị Hằng và Thỏ Ngọc","Chú Cuội và Thỏ Ngọc","Chú Cuội và Chị Hằng","Ông Địa và Thần Tài"],
       correct:2,
@@ -31,7 +31,7 @@
       options:[], // Bỏ trống options vì không dùng trắc nghiệm
       correct: 0,
       explain:"Giỏi quá! Ghép 'Đèn' và 'Lồng' ta được Đèn Lồng!" },
-    { bg:"q3", badge:"Thử thách 4", theme:"Ai lên mặt trăng?", mascot:"sym-cuoi", showBanner:true,
+    { bg:"q3", badge:"", theme:"", mascot:"sym-cuoi", showBanner:true,
       q:"Theo truyện cổ tích, ai là người Việt Nam đầu tiên lên mặt trăng?",
       options:["Chị Hằng","Chú Cuội","Thiên Lôi","Thỏ Ngọc"],
       correct:1,
@@ -43,7 +43,7 @@
       options:[], 
       correct: 0,
       explain:"Chính xác! Ghép 'Đèn', 'Ông' và 'Sao' ta được chiếc Đèn Ông Sao quen thuộc." },
-    { bg:"q5", badge:"Thử thách 6", theme:"Trung Thu vui nhất!", mascot:"sym-rabbit", showBanner:false,
+    { bg:"q5", badge:"", theme:"", mascot:"sym-rabbit", showBanner:false,
       q:"Trung Thu vui nhất khi được làm gì?",
       options:["Rước đèn","Ăn bánh","Chơi cùng bạn bè","Tất cả đáp án trên"],
       correct:3,
