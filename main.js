@@ -24,21 +24,25 @@
       options:["Chị Hằng và Thỏ Ngọc","Chú Cuội và Thỏ Ngọc","Chú Cuội và Chị Hằng","Ông Địa và Thần Tài"],
       correct:2,
       explain:"Đúng rồi! Chú Cuội và Chị Hằng là hai nhân vật quen thuộc gắn liền với đêm Trung Thu!" },
-    { bg:"q2", badge:"Thử thách 3", theme:"Cây đa của Chú Cuội", mascot:"sym-tree", showBanner:false,
-      q:"Sự tích Chú Cuội gắn liền với cây gì?",
-      options:["Cây sung","Cây đa","Cây bồ đề","Cây tre"],
-      correct:1,
-      explain:"Giỏi quá! Chú Cuội thường được kể là ngồi dưới gốc cây đa trên cung trăng đó!" },
+    { bg:"q2", badge:"", theme:"", mascot:"sym-tree", showBanner:true, 
+      type: "picture_guess", // Dấu hiệu nhận biết câu hỏi hình ảnh
+      q:"",
+      answerText: "ĐÈN LỒNG", // Đáp án sẽ hiện ra khi bấm nút
+      options:[], // Bỏ trống options vì không dùng trắc nghiệm
+      correct: 0,
+      explain:"Giỏi quá! Ghép 'Đèn' và 'Lồng' ta được Đèn Lồng!" },
     { bg:"q3", badge:"Thử thách 4", theme:"Ai lên mặt trăng?", mascot:"sym-cuoi", showBanner:true,
       q:"Theo truyện cổ tích, ai là người Việt Nam đầu tiên lên mặt trăng?",
       options:["Chị Hằng","Chú Cuội","Thiên Lôi","Thỏ Ngọc"],
       correct:1,
       explain:"Chính xác! Trong câu chuyện dân gian, Chú Cuội vì níu cây đa mà bay lên cung trăng!" },
-    { bg:"q4", badge:"Thử thách 5", theme:"Bí mật Mặt Trăng", mascot:"sym-rabbit", showBanner:false,
-      q:"Mặt Trăng quay xong một vòng quanh Trái Đất mất khoảng bao lâu?",
-      options:["29 ngày","30 ngày","31 ngày","7 ngày"],
-      correct:0,
-      explain:"Đúng rồi! Một vòng quay của Mặt Trăng quanh Trái Đất mất khoảng 29 ngày." },
+    { bg:"q4", badge:"", theme:"", mascot:"sym-rabbit", showBanner:true, 
+      type: "picture_guess", // Dấu hiệu nhận biết
+      q:"",
+      answerText: "ĐÈN ÔNG SAO", // Đáp án sẽ hiện ra
+      options:[], 
+      correct: 0,
+      explain:"Chính xác! Ghép 'Đèn', 'Ông' và 'Sao' ta được chiếc Đèn Ông Sao quen thuộc." },
     { bg:"q5", badge:"Thử thách 6", theme:"Trung Thu vui nhất!", mascot:"sym-rabbit", showBanner:false,
       q:"Trung Thu vui nhất khi được làm gì?",
       options:["Rước đèn","Ăn bánh","Chơi cùng bạn bè","Tất cả đáp án trên"],
@@ -68,10 +72,10 @@ preloadBackgrounds();
    
   { top: 'auto', bottom: '10%', left: '47%', right: 'auto', transform: 'translateX(-50%)' }, // Vòng 1
   { top: 'auto', bottom: '15%', left: '30%', right: 'auto', transform: 'translateX(-50%)' },             // Vòng 2
-  { top: 'auto', bottom: '20%', left: '40%', right: 'auto', transform: 'translateX(-50%)' },             // Vòng 3
+  { top: 'auto', bottom: '5%', left: '50%', right: 'auto', transform: 'translateX(-50%)' },             // Vòng 3
   { top: 'auto', bottom: '20%', left: '50%', right: 'auto', transform: 'translateX(-50%)' }, // Vòng 4
-  { top: 'auto', bottom: '10%', left: '45%', right: 'auto', transform: 'translateX(-50%)' }, // Vòng 5
-  { top: 'auto', bottom: '20%', left: '35%', right: 'auto', transform: 'translateX(-50%)' } // Vòng 6
+  { top: 'auto', bottom: '5%', left: '53%', right: 'auto', transform: 'translateX(-50%)' }, // Vòng 5
+  { top: 'auto', bottom: '15%', left: '37%', right: 'auto', transform: 'translateX(-50%)' } // Vòng 6
 ];
 
  function applyQuestionPosition(idx){
@@ -201,25 +205,128 @@ preloadBackgrounds();
   function loadQuestion(idx){
     const item = QUESTIONS[idx];
     document.getElementById('q-progress').textContent = state.stars + '/' + TOTAL;
-    document.getElementById('q-text').textContent = item.q;
-    document.getElementById('q-retry').textContent = '';
+    
+    const qTextEl = document.getElementById('q-text');
     const banner = document.getElementById('q-banner');
-    if(item.showBanner){
-      banner.innerHTML = '<div class="eyebrow-ribbon">'+item.badge+'</div><div class="q-theme">'+item.theme+'</div>';
-    } else {
-      banner.innerHTML = '';
-    }
     const wrap = document.getElementById('q-options');
-    wrap.innerHTML = '';
-    item.options.forEach((opt, i)=>{
-      const div = document.createElement('div');
-      div.className = 'option';
-      div.innerHTML = '<span class="letter">'+LETTERS[i]+'</span><span>'+opt+'</span>';
-      div.onclick = ()=>selectOption(i, div);
-      wrap.appendChild(div);
-    });
-  }
+    
+    // Tìm bảng trắng để xử lý
+    const sheet = document.querySelector('#screen-question .sheet');
 
+    document.getElementById('q-retry').textContent = '';
+    wrap.innerHTML = '';
+
+    // ==========================================
+    // NẾU LÀ CÂU "ĐUỔI HÌNH BẮT CHỮ"
+    // ==========================================
+    if (item.type === "picture_guess") {
+      
+      // 1. Dọn dẹp chữ thừa và làm tàng hình bảng trắng
+      qTextEl.style.display = 'none';
+      banner.style.display = 'none';
+      if (sheet) {
+        sheet.style.background = 'transparent';
+        sheet.style.boxShadow = 'none';
+        sheet.style.border = 'none';
+      }
+
+      // 2. Tạo khung chứa để bọc thanh màu tím và nút màu vàng
+      const guessContainer = document.createElement('div');
+      guessContainer.style.display = 'flex';
+      guessContainer.style.flexDirection = 'column';
+      guessContainer.style.alignItems = 'center';
+      guessContainer.style.width = '100%';
+      guessContainer.style.marginTop = '15px';
+
+      // 3. Tạo thanh đáp án MÀU TÍM (Giấu đi lúc đầu)
+      const answerBox = document.createElement('div');
+      answerBox.innerHTML = item.answerText;
+      answerBox.style.background = '#8e44ad'; // Màu tím giống ảnh
+      answerBox.style.color = '#fff'; // Chữ trắng
+      answerBox.style.fontSize = '38px'; 
+      answerBox.style.fontFamily = "'Baloo 2', sans-serif";
+      answerBox.style.fontWeight = '900';
+      answerBox.style.padding = '10px 40px';
+      answerBox.style.borderRadius = '16px';
+      answerBox.style.width = '100%';
+      answerBox.style.textAlign = 'center';
+      answerBox.style.marginBottom = '15px'; // Khoảng cách với nút vàng
+      answerBox.style.display = 'none'; // Lệnh giấu đi
+      answerBox.style.animation = 'sheetRise 0.4s cubic-bezier(.2,.8,.2,1)'; // Hiệu ứng trượt lên
+
+      // 4. Tạo nút bấm MÀU VÀNG "Câu trả lời"
+      const btn = document.createElement('button');
+      btn.innerHTML = 'Câu trả lời';
+      btn.style.background = '#ffc107'; // Vàng tươi
+      btn.style.color = '#3a2312'; // Chữ đen/nâu đậm
+      btn.style.border = 'none';
+      btn.style.padding = '8px 40px';
+      btn.style.fontSize = '20px';
+      btn.style.fontWeight = '800';
+      btn.style.borderRadius = '999px';
+      btn.style.cursor = 'pointer';
+      btn.style.fontFamily = "'Baloo 2', sans-serif";
+      btn.style.boxShadow = '0 5px 0 #d39e00'; // Đổ bóng tạo khối 3D
+
+      // 5. Sự kiện khi nhấn nút vàng
+      btn.onclick = () => {
+        // Bật thanh màu tím lên
+        answerBox.style.display = 'block';
+        
+        // Khóa nút vàng lại, tạo hiệu ứng lún xuống
+        btn.style.pointerEvents = 'none';
+        btn.style.transform = 'translateY(5px)';
+        btn.style.boxShadow = 'none';
+
+        // Chạy logic điểm số
+        state.usedFlags[state.currentIndex] = true;
+        state.stars += 1;
+        
+        // Bắn pháo hoa và âm thanh ăn điểm
+        const rect = answerBox.getBoundingClientRect();
+        confettiBurst(rect.left + rect.width/2, rect.top + rect.height/2, 25);
+        if (typeof Sound !== 'undefined') Sound.correct();
+
+        // Tạm dừng 2 giây để học sinh xem đáp án màu tím rồi mới chuyển cảnh
+        setTimeout(() => showFeedback(item), 2000);
+      };
+      
+      // Lắp ráp vào giao diện
+      guessContainer.appendChild(answerBox);
+      guessContainer.appendChild(btn);
+      wrap.appendChild(guessContainer);
+    } 
+    // ==========================================
+    // NẾU LÀ CÂU TRẮC NGHIỆM BÌNH THƯỜNG (A, B, C, D)
+    // ==========================================
+    else {
+      // Bật lại cái bảng trắng như cũ
+      if (sheet) {
+        sheet.style.background = ''; 
+        sheet.style.boxShadow = '';
+        sheet.style.border = '';
+      }
+
+      qTextEl.style.display = 'block';
+      qTextEl.textContent = item.q;
+
+      if(item.showBanner && (item.badge !== "" || item.theme !== "")){
+        banner.innerHTML = '<div class="eyebrow-ribbon">'+item.badge+'</div><div class="q-theme">'+item.theme+'</div>';
+        banner.style.display = 'block';
+      } else {
+        banner.innerHTML = '';
+        banner.style.display = 'none';
+      }
+
+      item.options.forEach((opt, i)=>{
+        const div = document.createElement('div');
+        div.className = 'option';
+        div.innerHTML = '<span class="letter">'+LETTERS[i]+'</span><span>'+opt+'</span>';
+        div.onclick = ()=>selectOption(i, div);
+        wrap.appendChild(div);
+      });
+    }
+  }
   function selectOption(i, el){
     const item = QUESTIONS[state.currentIndex];
     if(i === item.correct){
@@ -327,7 +434,7 @@ preloadBackgrounds();
 
   // Khai báo danh sách các file ảnh bạn đã chuẩn bị sẵn
 const DANH_SACH_ANH_THUONG = [
-  "image/chucmung2.png",
+  
   "image/camon1.png",
   "image/camon2.png",
   "image/camon3.png",

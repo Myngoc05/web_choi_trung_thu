@@ -168,7 +168,7 @@
 <section class="screen" id="screen-complete">
   <div class="sheet-wrap">
     <div class="sheet">
-      <p class="center-note">Em đã trả lời đúng cả 6 câu hỏi Trung Thu!</p>
+      <p class="center-note">Các em đã trả lời đúng cả 6 câu hỏi Trung Thu!</p>
       <button class="btn" onclick="showScreen('reward')">Nhận phần thưởng 🎁</button>
     </div>
   </div>
@@ -179,15 +179,13 @@
   <div class="sheet-wrap">
     <div class="sheet">
       <div class="btn-row">
-        <button class="btn secondary" onclick="resetGame()">Chơi lại</button>
+       
         <!-- Đổi hàm onClick ở đây -->
         <button class="btn" onclick="showPreparedImage()">Chụp khoảnh khắc</button>
       </div>
       
       <!-- KHUNG CHỨA ẢNH CÓ SẴN (Mặc định ẩn) -->
       <img id="my-prepared-image" src="image/ket.png" style="display:none; width:100%; margin-top:16px; border-radius:12px; border:3px solid #f6c453; box-shadow:0 8px 16px rgba(0,0,0,0.2);">
-      <div id="save-note" style="display:none; text-align:center; font-size:13px; margin-top:8px; color:var(--ink-soft); font-weight:bold;">Nhấn giữ ảnh để tải về máy nhé!</div>
-
       <button class="btn ghost" onclick="showScreen('outro')" style="margin-top:8px;">Tiếp theo →</button>
     </div>
   </div>
